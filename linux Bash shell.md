@@ -153,3 +153,9 @@ uniq [-ic]
 -n ：后面接次数，每次 command 指令执行时，要使用几个参数的意思。
 当 xargs 后面没有接任何的指令时，默认是以 echo 来进行输出喔！
 ````
+
+````bash
+sed 's/要被取代的字符串/新的字符串/g'
+只显示ip
+/sbin/ifconfig eth0 | grep 'inet ' | sed 's/^.*inet //g'  | sed 's/ *netmask.*$//g'
+````
