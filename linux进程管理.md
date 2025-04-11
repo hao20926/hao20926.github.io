@@ -31,6 +31,32 @@ signal ：代表给予后面接的那个工作什么样的指示啰！用 man 7 
  -9 ：立刻强制删除一个工作；
  -15：以正常的进程方式终止一项工作。与 -9 是不一样的。
 ````
+## `pgrep`  根据进程名称或其他属性快速查找进程 ID（PID）
+````bash
+安装pgrep（大多数Linux发行版预装）
+Ubuntu/Debian
+sudo apt-get install procps
+
+CentOS/RHEL
+sudo yum install procps-ng
+
+Arch Linux
+sudo pacman -S procps-ng
+
+用法：
+pgrep -[lionuvc] 进程名
+
+选项与参数：
+    默认只显示PID
+
+  -l ： 同时显示进程名和PID
+ -o ： 当匹配多个进程时，显示进程号最小的那个
+ -n ： 当匹配多个进程时，显示进程号最大的那个
+注：进程号越大，并不一定意味着进程的启动时间越晚
+ -v ： 反向匹配（排除特定进程）
+ -n :   找到特定进程中最新的进程
+ -c :   统计符合条件的进程数量
+````
 
 ## `ps`  将某个时间点的进程运作情况摘取下来
 ````bash
