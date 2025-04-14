@@ -213,3 +213,28 @@ netstat -[atunlp]
 -p ：列出该网络服务的进程 PID
 ````
 
+## `dmesg`  分析核心产生的讯息(系统开机时的信息)
+````bash
+[root@study ~]# dmesg | more
+
+搜寻开机的时候，硬盘的相关信息为何？
+[root@study ~]# dmesg | grep -i vda
+
+````
+
+## `vmstat` 侦测系统资源变化
+````bash
+[root@study ~]# vmstat [-a] [延迟 [总计侦测次数]] 
+
+选项与参数：
+-a ：使用 inactive/active(活跃与否) 取代 buffer/cache 的内存输出信息；
+-f ：开机到目前为止，系统复制 (fork) 的进程数；
+-s ：将一些事件 (开机至目前为止) 导致的内存变化情况列表说明；
+-S ：后面可以接单位，让显示的数据有单位。例如 K/M 取代 bytes 的容量；
+-d ：列出磁盘的读写总量统计表
+-p ：后面列出分区槽，可显示该分区槽的读写总量统计表
+
+统计目前主机 CPU 状态，每秒一次，共计三次！
+
+ vmstat 1 3
+````
