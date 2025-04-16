@@ -12,7 +12,7 @@
   - 文件属性
   - 文件权限
   - 文件系统层级标准 (FHS)
-- [🖥️ 2. Linux 文件与目录管理命令](Linux_study/02、Linux 文件与目录管理命令.md)
+- [🖥️ 2. Linux 文件与目录管理命令](Linux_study/02、Linux 文件与目录管理命令1.md)
   - Linux文件命令
   - Linux目录命令
 
