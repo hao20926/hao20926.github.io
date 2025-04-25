@@ -146,3 +146,24 @@ systemctl restart nftables
 nft list chains
 ````
 
+
+## nftables 的表格 （table） 与链 （chain）
+````bash
+
+nft add rule inet filter input tcp dport 22 accept  # 允许 SSH
+nft add rule inet filter input tcp dport 80 accept  # 允许 HTTP
+
+nft list ruleset > /etc/nftables.conf  # 导出配置
+systemctl restart nftables             # 重启生效
+````
+# `/etc/nftables.conf`配置
+````bash
+table inet filter {
+    chain input {
+        type filter hook input priority 0;
+        tcp dport 22 accept  # 允许 SSH
+        tcp dport 80 accept  # 允许 HTTP
+        drop                  # 默认拒绝
+    }
+}
+````
